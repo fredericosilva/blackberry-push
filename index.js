@@ -11,7 +11,7 @@ module.exports = function(url, appID, user, password) {
     var authInfo = new Buffer(user + ":" + password).toString('base64'),
         headers  = {
         'Content-Type'  : 'multipart/related; boundary=' + boundary + '; type=application/xml',
-        'Authorization' : "Basic " + authInfo
+        'Authorization' : 'Basic ' + authInfo
     };
 
     return function(pin, message, callback) {
