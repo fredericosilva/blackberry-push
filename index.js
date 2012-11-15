@@ -41,6 +41,11 @@ function parseResponse(data, callback) {
 }
 
 function buildXML(pin, msg, appID) {
+
+    if (typeof msg !== 'string') {
+        msg = JSON.stringify(msg);
+    }
+
     var deliverBefore = new Date(Date.now() + 2*3600*1000).toISOString().substring(0, 19) + 'Z',
         ID            = Date.now() + "" + Math.ceil(Math.random()* 10000);
 
