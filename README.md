@@ -5,7 +5,7 @@ Blackberry push API for node.js
 
 ```js
 var bbp  = require('blackberry-push'),
-	push = bbp(url, appID, user, password);
+	push = bbp(url, appID, password);
 
 push('pin', 'hello world', function(err, result) {
 	console.log(result); 

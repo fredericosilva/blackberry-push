@@ -6,9 +6,9 @@ var request  = require('request'),
     boundary = "650dhrasdfhHOITSfds7"
 ;
 
-module.exports = function(url, appID, user, password) {
+module.exports = function(url, appID, password) {
 
-    var authInfo = new Buffer(user + ":" + password).toString('base64'),
+    var authInfo = new Buffer(appID + ":" + password).toString('base64'),
         headers  = {
         'Content-Type'  : 'multipart/related; boundary=' + boundary + '; type=application/xml',
         'Authorization' : 'Basic ' + authInfo
